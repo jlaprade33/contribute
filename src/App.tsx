@@ -1,11 +1,10 @@
-import './App.css';
+import { MainPage } from './features';
+import './styles.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       
-      </header>
+    <div className="App"> 
+      <MainPage />
     </div>
   );
 }
