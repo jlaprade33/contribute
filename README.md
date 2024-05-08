@@ -1,2 +1,1 @@
-# contribute
-Leather contribute test feature
+# Leather Contribution Feature by Jeff LaPrade
