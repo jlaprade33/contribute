@@ -17,7 +17,7 @@ export function Container({
 }: ContainerProps){
     return(
         <div className={clsx(
-            `w-${width} ${padding}`,
+            `w-${width} ${padding} flex-wrap`,
             flex ? "flex justify-between" : 'block',
             hover ? "hover:bg-background-gray transition transition-500 cursor-pointer" : null
         )}>

@@ -14,7 +14,7 @@ export function MainPage(){
                 <Container flex width={'4/5'}>
                     <Container>
                         <Text text="Main Account" />
-                        <DollarDisplay value={"0.00"}/>
+                        <DollarDisplay value={"987.65"}/>
                     </Container>
                     <div onClick={()=>setShowCharity(!showCharity)}>
                         <Container hover padding={'p-2 rounded-sm'}>
