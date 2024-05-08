@@ -4,6 +4,8 @@ import { Text } from '../Typography';
 
 interface PhotoProps {
     item: CardItem;
+    contribution: number;
+    setError: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface CardItem {
@@ -13,16 +15,21 @@ interface CardItem {
     address: string;
 }
 
-export function PhotoCard({item}: PhotoProps){
+export function PhotoCard({item, contribution, setError}: PhotoProps){
     const [hovered, setHovered] = useState<boolean>(false);
 
     const handleClick = () => {
-        // @ts-ignore
-        if(window.LeatherProvider){
-            transferFunds();
-        // @ts-ignore
-        } else if(!window.LeatherProvider){
-            alert('LeatherProvider was not found. Please install the Leather wallet extension to your browser.')
+        if(contribution < 1){
+            setError(true)
+        } else {
+            setError(false)
+            // @ts-ignore
+            if(window.LeatherProvider){
+                transferFunds();
+            // @ts-ignore
+            } else if(!window.LeatherProvider){
+                alert('LeatherProvider was not found. Please install the Leather wallet extension to your browser.')
+            }
         }
     }
 
@@ -34,7 +41,7 @@ export function PhotoCard({item}: PhotoProps){
                     recipients: [
                     {
                         address: item?.address,
-                        amount: "10000",
+                        amount: contribution,
                     },
                     ],
                     network: "testnet",

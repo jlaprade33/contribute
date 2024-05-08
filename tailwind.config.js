@@ -3,7 +3,8 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 //set up theme colors
 const colors = {
   font: {
-    white: '#edeef0'
+    white: '#edeef0',
+    red: "#FF3800"
   },
   background: {
     dark: '#18191b',

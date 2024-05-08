@@ -7,12 +7,14 @@ interface TextProps {
     margin?: string;
     width?: string;
     bold?: boolean;
+    color?: 'red' | 'white';
 }
 
-export function Text({text, bold = false, align = 'left', width = 'fit', margin = '0', size = 'md'}: TextProps){
+export function Text({text, bold = false, align = 'left', color = 'white', width = 'fit', margin = '0', size = 'md'}: TextProps){
     return(
         <p className={clsx(
-            `flex text-lg text-font-white text-${align} m-${margin} w-${width} text-${bold}`,
+            `flex text-lg text-${align} m-${margin} w-${width} text-${bold}`,
+            color === 'red' ? 'text-font-red' : 'text-font-white',
             size === 'sm' ? 'text-[14px]' : size === 'lg' ? 'text-[32px]' : 'text-[24px]'
         )}>
             {text}
