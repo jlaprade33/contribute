@@ -9,7 +9,7 @@ export function MainPage(){
 
     return(
         <div className="w-full py-10 min-h-[100vh] bg-background-dark ">
-            <div className="px-10">
+            <div className="px-10 max-w-[1000px]">
                 <img className="w-[160px] flex mb-[90px]" src={leatherByJeff} alt='logo' />
                 <Container flex width={'4/5'}>
                     <Container>
